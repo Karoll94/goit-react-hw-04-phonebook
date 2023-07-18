@@ -1,0 +1,10 @@
+.label{
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 520px;
+}
