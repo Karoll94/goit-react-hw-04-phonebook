@@ -21,14 +21,7 @@ export const App = () => {
   const isFirstRender = useRef(true);
 
 
-  // Saving contacts to local storage
-  useEffect(() => {
-    if (!isFirstRender.current) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-      // console.log(contacts);
-    }
-    isFirstRender.current = false;
-  }, [contacts]);
+  
 
 
   // Getting contacts to local storage
@@ -37,8 +30,18 @@ export const App = () => {
     // console.log(parsedContacts);
     if (parsedContacts.length) {
       setContacts([...parsedContacts]);
+      // console.log(setContacts);
     }
   }, []);
+
+  // Saving contacts to local storage
+  useEffect(() => {
+    if (!isFirstRender.current) {
+      window.localStorage.setItem('contacts', JSON.stringify(contacts));
+      // console.log(contacts);
+    }
+    isFirstRender.current = false;
+  }, [contacts]);
 
   const addContact = (arrayData)=>{
     let nameArray = contacts.map((elemCurrent)=> elemCurrent.name);
@@ -95,7 +98,7 @@ export const App = () => {
       <ContactList 
       contacts= {filterArray(contacts)}
       del= {deleteContactFromContactList}
-      
+
       />
       
     </div>
