@@ -95,6 +95,7 @@ export const App = () => {
       <ContactList 
       contacts= {filterArray(contacts)}
       del= {deleteContactFromContactList}
+      
       />
       
     </div>
