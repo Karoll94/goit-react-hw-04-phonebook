@@ -20,10 +20,6 @@ export const App = () => {
 
   const isFirstRender = useRef(true);
 
-
-  
-
-
   // Getting contacts to local storage
   useEffect(() => {
     const parsedContacts = JSON.parse(localStorage.getItem("contacts"));
